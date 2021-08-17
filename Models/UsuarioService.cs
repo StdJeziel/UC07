@@ -5,7 +5,7 @@ namespace Biblioteca.Models
 {
     public class UsuarioService
     {
-        public void Criar(Usuario u)
+        public void Cria(Usuario u)
         {
             using (BibliotecaContext bc = new BibliotecaContext())
             {
@@ -14,7 +14,7 @@ namespace Biblioteca.Models
             }
         }
 
-        public List<Usuario> Listar()
+        public List<Usuario> Lista()
         {
             using (BibliotecaContext bc = new BibliotecaContext())
             {
@@ -22,7 +22,7 @@ namespace Biblioteca.Models
             }
         }
 
-        public Usuario Listar(int id)
+        public Usuario Busca(int id)
         {
             using (BibliotecaContext bc = new BibliotecaContext())
             {
@@ -30,7 +30,7 @@ namespace Biblioteca.Models
             }
         }
 
-        public void Editar(Usuario uAlt)
+        public void Edita(Usuario uAlt)
         {
             using (BibliotecaContext bc = new BibliotecaContext())
             {
@@ -44,7 +44,7 @@ namespace Biblioteca.Models
             }
         }
 
-        public void Excluir(int id)
+        public void Exclui(int id)
         {
             using (BibliotecaContext bc = new BibliotecaContext())
             {
