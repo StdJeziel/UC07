@@ -9,6 +9,8 @@ namespace Biblioteca.Models
         {
             using (BibliotecaContext bc = new BibliotecaContext())
             {
+                u.Senha = Cripto.TxtCripto(u.Senha);
+
                 bc.Add(u);
                 bc.SaveChanges();
             }
@@ -37,7 +39,7 @@ namespace Biblioteca.Models
                 Usuario u = bc.Usuarios.Find(uAlt.Id);
                 u.Nome = uAlt.Nome;
                 u.Login = uAlt.Login;
-                u.Senha = uAlt.Senha;
+                u.Senha = Cripto.TxtCripto(uAlt.Senha);
                 u.Tipo = uAlt.Tipo;
 
                 bc.SaveChanges();
@@ -48,7 +50,7 @@ namespace Biblioteca.Models
         {
             using (BibliotecaContext bc = new BibliotecaContext())
             {
-                bc.Usuarios.Remove(bc.Usuarios.Find(id));
+                bc.Remove(bc.Usuarios.Find(id));
                 bc.SaveChanges();
             }
         }

@@ -14417,8 +14417,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/jeziel/Área de Trabalho/Prática EaD/UC07/AT01/Biblioteca/Views/Usuario/Listagem.cshtml",
+      "TargetPath": "Listagem.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/jeziel/Área de Trabalho/Prática EaD/UC07/AT01/Biblioteca/Views/Emprestimo/Edicao.cshtml",
       "TargetPath": "Edicao.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/jeziel/Área de Trabalho/Prática EaD/UC07/AT01/Biblioteca/Views/Usuario/Cadastro.cshtml",
+      "TargetPath": "Cadastro.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14462,6 +14472,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/jeziel/Área de Trabalho/Prática EaD/UC07/AT01/Biblioteca/Views/Usuario/Cadastrado.cshtml",
+      "TargetPath": "Cadastrado.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/jeziel/Área de Trabalho/Prática EaD/UC07/AT01/Biblioteca/Views/Livro/Listagem.cshtml",
       "TargetPath": "Listagem.cshtml",
       "FileKind": "mvc"
@@ -14469,6 +14484,11 @@
     {
       "FilePath": "/home/jeziel/Área de Trabalho/Prática EaD/UC07/AT01/Biblioteca/Views/Emprestimo/Cadastro.cshtml",
       "TargetPath": "Cadastro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/jeziel/Área de Trabalho/Prática EaD/UC07/AT01/Biblioteca/Views/Usuario/Edicao.cshtml",
+      "TargetPath": "Edicao.cshtml",
       "FileKind": "mvc"
     },
     {

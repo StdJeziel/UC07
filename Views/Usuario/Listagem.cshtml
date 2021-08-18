@@ -1,0 +1,46 @@
+@model List<Usuario>
+
+@{
+    ViewData["Title"] = "Usuários";
+}
+
+<p class="text-danger">@ViewData["Mensagem"]</p>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Login</th>
+                    <th>Nível</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Usuario u in Model)
+                {
+                    <tr>
+                        <td>@u.Id</td>
+                        <td>@u.Nome</td>
+                        <td>@u.Login</td>
+                        @if (u.Tipo == 0)
+                        {
+                            <td>Administrador</td>
+                        }
+
+                        else
+                        {
+                            <td>Usuário</td>
+                        }
+                        <td>
+                            <a href="/Usuario/Edicao/@u.Id">Editar</a> /
+                            <a href="/Usuario/Exclusao/@u.Id" onclick="confirm('Deseja realmente excluir esse usuário?')">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <a class="btn btn-primary" asp-action="Cadastro">Registrar novo usuário</a>
