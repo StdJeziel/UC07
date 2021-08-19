@@ -33,7 +33,7 @@ namespace Biblioteca.Controllers
                 {
                     controller.HttpContext.Session.SetInt32("id", lstUsrEncont[0].Id);
                     controller.HttpContext.Session.SetString("nome", lstUsrEncont[0].Nome);
-                    controller.HttpContext.Session.SetInt32("tipo", lstUsrEncont[0].Tipo);
+                    controller.HttpContext.Session.SetString("login", lstUsrEncont[0].Login);
                     return true;
                 }
 
@@ -59,6 +59,12 @@ namespace Biblioteca.Controllers
                 bc.Usuarios.Add(usr);
                 bc.SaveChanges();
             }
+        }
+
+        public static void VerificaNivel(Controller controller)
+        {
+            if (controller.HttpContext.Session.GetString("login") != "admin")
+                controller.Request.HttpContext.Response.Redirect("/Usuario/NaoAdmin");
         }
     }
 }

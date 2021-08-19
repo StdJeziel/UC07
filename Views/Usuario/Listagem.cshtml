@@ -36,7 +36,8 @@
                         }
                         <td>
                             <a href="/Usuario/Edicao/@u.Id">Editar</a> /
-                            <a href="/Usuario/Exclusao/@u.Id" onclick="confirm('Deseja realmente excluir esse usuário?')">Excluir</a>
+                            <a href="/Usuario/Exclusao/@u.Id"
+                            onclick="return confirm('Deseja realmente excluir esse usuário?')">Excluir</a>
                         </td>
                     </tr>
                 }

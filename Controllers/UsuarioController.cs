@@ -11,6 +11,7 @@ namespace Biblioteca.Controllers
         public IActionResult Cadastro()
         {
             Autenticacao.CheckLogin(this);
+            Autenticacao.VerificaNivel(this);
 
             return View();
         }
@@ -30,6 +31,7 @@ namespace Biblioteca.Controllers
         public IActionResult Cadastrado()
         {
             Autenticacao.CheckLogin(this);
+            Autenticacao.VerificaNivel(this);
 
             return View();
         }
@@ -37,6 +39,7 @@ namespace Biblioteca.Controllers
         public IActionResult Listagem()
         {
             Autenticacao.CheckLogin(this);
+            Autenticacao.VerificaNivel(this);
 
             List<Usuario> lstUsr = us.Lista();
 
@@ -46,6 +49,7 @@ namespace Biblioteca.Controllers
         public IActionResult Edicao(int id)
         {
             Autenticacao.CheckLogin(this);
+            Autenticacao.VerificaNivel(this);
 
             return View(us.Busca(id));
         }
@@ -55,6 +59,11 @@ namespace Biblioteca.Controllers
             us.Exclui(id);
 
             return RedirectToAction("Listagem", "Usuario");
+        }
+
+        public IActionResult NaoAdmin()
+        {
+            return View();
         }
     }
 }
