@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Listagem de Empréstimos";
     int pgTotal = Int32.Parse(ViewData["PgTotal"].ToString());
+    DateTime agora = DateTime.Now;
 }
 
 <div class="row">
@@ -38,15 +39,31 @@
             <tbody>
                 @foreach (Emprestimo e in Model)
                 {
-                    <tr>
-                        <td>@e.Id</td>
-                        <td>@e.NomeUsuario</td>
-                        <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
-                        <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
-                        <td>@e.Livro.Titulo</td>
-                        <td>@e.Livro.Autor</td>
-                        <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>
-                    </tr>
+                    if (e.DataDevolucao >= agora.Date || e.Devolvido == true)
+                    {
+                        <tr>
+                            <td>@e.Id</td>
+                            <td>@e.NomeUsuario</td>
+                            <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
+                            <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
+                            <td>@e.Livro.Titulo</td>
+                            <td>@e.Livro.Autor</td>
+                            <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>
+                        </tr>
+                    }
+
+                    else
+                    {
+                        <tr class="text-danger">
+                            <td>@e.Id</td>
+                            <td>@e.NomeUsuario</td>
+                            <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
+                            <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
+                            <td>@e.Livro.Titulo</td>
+                            <td>@e.Livro.Autor</td>
+                            <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>
