@@ -51,8 +51,8 @@
 /home/jeziel/Estudos/Prática EaD/UC07/AT01/Biblioteca/obj/Debug/netcoreapp3.1/Razor/Views/Usuario/Cadastro.cshtml.g.cs
 /home/jeziel/Estudos/Prática EaD/UC07/AT01/Biblioteca/obj/Debug/netcoreapp3.1/Razor/Views/Usuario/Edicao.cshtml.g.cs
 /home/jeziel/Estudos/Prática EaD/UC07/AT01/Biblioteca/obj/Debug/netcoreapp3.1/Razor/Views/Usuario/Listagem.cshtml.g.cs
+/home/jeziel/Estudos/Prática EaD/UC07/AT01/Biblioteca/obj/Debug/netcoreapp3.1/Razor/Views/Usuario/NaoAdmin.cshtml.g.cs
 /home/jeziel/Estudos/Prática EaD/UC07/AT01/Biblioteca/obj/Debug/netcoreapp3.1/Razor/Views/_ViewImports.cshtml.g.cs
 /home/jeziel/Estudos/Prática EaD/UC07/AT01/Biblioteca/obj/Debug/netcoreapp3.1/Razor/Views/_ViewStart.cshtml.g.cs
 /home/jeziel/Estudos/Prática EaD/UC07/AT01/Biblioteca/obj/Debug/netcoreapp3.1/Biblioteca.csproj.CopyComplete
 /home/jeziel/Estudos/Prática EaD/UC07/AT01/Biblioteca/obj/Debug/netcoreapp3.1/Biblioteca.genruntimeconfig.cache
-/home/jeziel/Estudos/Prática EaD/UC07/AT01/Biblioteca/obj/Debug/netcoreapp3.1/Razor/Views/Usuario/NaoAdmin.cshtml.g.cs

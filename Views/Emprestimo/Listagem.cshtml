@@ -1,22 +1,23 @@
 @model ICollection<Emprestimo>
 @{
     ViewData["Title"] = "Listagem de Empréstimos";
+    int pgTotal = Int32.Parse(ViewData["PgTotal"].ToString());
 }
 
 <div class="row">
     <div class="col-md-12">
-    <form class="form-inline" method="POST">
-        <div class="form-group mb-2">
-            <select name="TipoFiltro" class="form-control">
-                <option value="Usuario">Usuário</option>
-                <option value="Livro">Livro</option>
-            </select>
-        </div>
-        <div class="form-group mb-2 mx-sm-3">
-            <input type="text" placeholder="Filtro" name="Filtro" class="form-control" />
-        </div>
-        <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
-    </form>
+        <form class="form-inline" method="POST">
+            <div class="form-group mb-2">
+                <select name="TipoFiltro" class="form-control">
+                    <option value="Usuario">Usuário</option>
+                    <option value="Livro">Livro</option>
+                </select>
+            </div>
+            <div class="form-group mb-2 mx-sm-3">
+                <input type="text" placeholder="Filtro" name="Filtro" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+        </form>
     </div>
 </div>
 
@@ -24,30 +25,40 @@
     <div class="col-md-12">
         <table class="table table-striped">
             <thead>
-                <tr><th>Id</th>
-                <th>Usuario</th>
-                <th>Data Empréstimo</th>
-                <th>Data Devolução</th>
-                <th>Livro</th>
-                <th>Autor</th>
-                <th></th>
+                <tr>
+                    <th>Id</th>
+                    <th>Usuario</th>
+                    <th>Data Empréstimo</th>
+                    <th>Data Devolução</th>
+                    <th>Livro</th>
+                    <th>Autor</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                @foreach(Emprestimo e in Model)
+                @foreach (Emprestimo e in Model)
                 {
-                <tr>
-                    <td>@e.Id</td>
-                    <td>@e.NomeUsuario</td>
-                    <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
-                    <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
-                    <td>@e.Livro.Titulo</td>
-                    <td>@e.Livro.Autor</td>
-                    <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>
-                </tr>
+                    <tr>
+                        <td>@e.Id</td>
+                        <td>@e.NomeUsuario</td>
+                        <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
+                        <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
+                        <td>@e.Livro.Titulo</td>
+                        <td>@e.Livro.Autor</td>
+                        <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>
+                    </tr>
                 }
             </tbody>
         </table>
+        <nav id="paginacao">
+            <ul class="pagination justify-content-center">
+                @for (var p = 1; p <= pgTotal; p++)
+                {
+                    <li id="page-li" class="page-item">
+                        <a id="page-a" class="page-link" href="/Emprestimo/Listagem?pgAtual=@p">@p</a>
+                    </li>
+                }
+            </ul>
+        </nav>
     </div>
 </div>
-

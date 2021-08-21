@@ -1,7 +1,10 @@
 @model List<Livro>
+
 @{
     ViewData["Title"] = "Listagem de Livros";
+    int pgTotal = Int32.Parse(ViewData["PgTotal"].ToString());
 }
+
 <div class="row">
     <div class="col-md-12">
         <form class="form-inline" method="POST">
@@ -54,5 +57,15 @@
                 }
             </tbody>
         </table>
+        <nav id="paginacao">
+            <ul class="pagination justify-content-center">
+                @for (var p = 1; p <= pgTotal; p++)
+                {
+                    <li id="page-li" class="page-item">
+                        <a id="page-a" class="page-link" href="/Livro/Listagem?pgAtual=@p">@p</a>
+                    </li>
+                }
+            </ul>
+        </nav>
     </div>
 </div>
